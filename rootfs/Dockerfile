@@ -9,15 +9,12 @@ ENV JOB_CONFIG ${APP_DIR}/datapusher_settings.py
 
 WORKDIR ${APP_DIR}
 
-RUN apk add --no-cache python \
+RUN apt-get --no-cache python \
     py-pip \
     py-gunicorn \
-    libxslt && \
+    libxslt \
     # Temporary packages to build CKAN requirements
-    apk add --no-cache --virtual .build-deps \
-    gcc \
     git \
-    musl-dev \
     python-dev \
     libxml2-dev \
     libxslt-dev && \
@@ -26,10 +23,10 @@ RUN apk add --no-cache python \
     git clone -b ${GIT_BRANCH} --depth=1 --single-branch ${GIT_URL} && \
     cd datapusher && \
     python setup.py install && \
-    pip install --no-cache-dir -r requirements.txt && \
-    # Remove temporary packages and files
-    apk del .build-deps && \
-    rm -rf ${APP_DIR}/src
+    pip install --no-cache-dir -r requirements.txt
+
+RUN apt-get install language-pack-de && \
+    update-locale LANG=de_DE.UTF-8 LC_MESSAGES=POSIX
 
 COPY setup ${APP_DIR}
 
