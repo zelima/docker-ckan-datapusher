@@ -10,7 +10,7 @@ ENV LANG de_DE.UTF-8
 
 WORKDIR ${APP_DIR}
 
-RUN mpt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     locales \
     git \
     libxml2-dev \
