@@ -9,7 +9,7 @@ ENV JOB_CONFIG ${APP_DIR}/datapusher_settings.py
 
 WORKDIR ${APP_DIR}
 
-RUN apt-get --no-cache python \
+RUN apt-get install --no-cache python \
     py-pip \
     py-gunicorn \
     libxslt \
