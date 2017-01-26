@@ -1,4 +1,4 @@
-FROM keitaro/base:0.1
+FROM python2
 
 MAINTAINER Keitaro Inc <info@keitaro.info>
 
