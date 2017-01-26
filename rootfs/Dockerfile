@@ -3,8 +3,8 @@ FROM python:2
 MAINTAINER Keitaro Inc <info@keitaro.info>
 
 ENV APP_DIR=/srv/app
-ENV GIT_BRANCH 0.0.8
-ENV GIT_URL https://github.com/ckan/datapusher.git
+ENV GIT_BRANCH master
+ENV GIT_URL https://github.com/ViderumGlobal/datapusher.git
 ENV JOB_CONFIG ${APP_DIR}/datapusher_settings.py
 ENV LANG de_DE.UTF-8
 
