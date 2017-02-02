@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
     mkdir ${APP_DIR}/src && cd ${APP_DIR}/src && \
     git clone -b ${GIT_BRANCH} --depth=1 --single-branch ${GIT_URL} && \
     cd datapusher && \
-    git checkout ea153aacfe25398ef46ae8c1189ca513a223cb0c && \
+    git checkout e1c7b6f585eda706e3a1310cc964bf1432495ac5 && \
     python setup.py install && \
     pip install --no-cache-dir -r requirements.txt && \
     pip uninstall messytables -y && \
