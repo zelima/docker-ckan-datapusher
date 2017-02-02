@@ -28,6 +28,8 @@ RUN apt-get update && apt-get install -y \
     git checkout ea153aacfe25398ef46ae8c1189ca513a223cb0c && \
     python setup.py install && \
     pip install --no-cache-dir -r requirements.txt && \
+    pip uninstall messytables -y && \
+    pip install git+https://github.com/ViderumGlobal/messytables.git@68180fb1b215e3c19845dddc005369f5520d17a9#egg=messytables && \
     # Install gunicorn
     pip install gunicorn
 
