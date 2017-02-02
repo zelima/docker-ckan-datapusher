@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y \
     mkdir ${APP_DIR}/src && cd ${APP_DIR}/src && \
     git clone -b ${GIT_BRANCH} --depth=1 --single-branch ${GIT_URL} && \
     cd datapusher && \
+    git checkout ea153aacfe25398ef46ae8c1189ca513a223cb0c
     python setup.py install && \
     pip install --no-cache-dir -r requirements.txt && \
     # Install gunicorn
