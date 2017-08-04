@@ -33,7 +33,6 @@ RUN apt-get update && apt-get install -y \
     # Install gunicorn
     pip install gunicorn
 
-
 COPY setup ${APP_DIR}
 
 EXPOSE 8000
