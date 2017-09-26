@@ -12,7 +12,11 @@ WORKDIR ${APP_DIR}
 RUN apk add --no-cache python \
     py-pip \
     py-gunicorn \
-    libxslt && \
+    libxslt \
+    ca-certificates && \
+    # Add Gandi intermediary certificate
+    curl -L https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem -o /usr/local/share/ca-certificates/GandiStandardSSLCA2.crt && \
+    update-ca-certificates && \
     # Temporary packages to build CKAN requirements
     apk add --no-cache --virtual .build-deps \
     gcc \
