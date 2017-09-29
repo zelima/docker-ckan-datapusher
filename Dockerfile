@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     locales \
     git \
     libxml2-dev \
+    libmagic-dev \
     libxslt-dev && \
     rm -rf /var/lib/apt/lists/* && \
     # Configure locale
