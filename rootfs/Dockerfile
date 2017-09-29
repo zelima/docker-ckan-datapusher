@@ -12,6 +12,7 @@ WORKDIR ${APP_DIR}
 RUN apk add --no-cache python \
     py-pip \
     py-gunicorn \
+    libmagic-dev \
     libxslt && \
     # Temporary packages to build CKAN requirements
     apk add --no-cache --virtual .build-deps \
