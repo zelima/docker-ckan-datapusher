@@ -36,4 +36,4 @@ COPY setup ${APP_DIR}
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--log-file=-", "wsgi"]
+CMD ["gunicorn", "-b=0.0.0.0", "--log-file=-", "wsgi"]
