@@ -9,7 +9,7 @@ This repository contains base docker image used to build [CKAN Datapusher](https
 To create new image run:
 
 ```sh 
-docker build --tag ckan-datapusher . 
+make build 
 ``` 
 The –-tag ckan-datapusher flag sets the image name to ckan-datapusher and the dot ( “.” ) at the end tells docker build to look into the current directory for Dockerfile and related contents.
 
@@ -37,7 +37,7 @@ By default DataPusher should be running at the following port:
 To upload the image to DockerHub run:
 
 ```sh 
-docker push [options] <docker-hub>/ckan:<datapusher-tag> 
+make push 
 ```
 
 ## Upgrade 
